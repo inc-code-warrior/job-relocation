@@ -70,6 +70,6 @@ with open(filename, "w", encoding="UTF8", newline="") as f:
         else:
             job = None
 
-        break
+        # break
 
 b.quit()
