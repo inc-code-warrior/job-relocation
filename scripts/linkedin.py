@@ -1,5 +1,6 @@
 import time
 
+
 def scroll_to_end(browser):
     scroll_pause_time = 1
     screen_height = browser.execute_script("return window.screen.height;")
@@ -24,19 +25,29 @@ def scroll_to_end(browser):
         if (screen_height) * i > scroll_height:
             break
 
+
 def filter_job(job):
     # keys: list_date, company, location, title, link, status, description
 
-    title_blacklist = {'manager', 'java', 'c++', 'c#', '.net'}
-    required = {'python'}
+    title_blacklist = {"manager", "java", "c++", "c#", ".net"}
+    required = {"python"}
 
     # todo: handle splitting on multiple special characters but still work with c#, c++, etc.
-    title = set(job['title'].lower().split())
-    if len(title.intersection(title_blacklist)) > 0:
+    title = set(job["title"].lower().split())
+    blacklisted_words_in_title = title.intersection(title_blacklist)
+    if len(blacklisted_words_in_title) > 0:
+        print(f"FILTERING - Word(s) found in title: {blacklisted_words_in_title}")
         return None
     
     for r in required:
-        if r not in job['description']:
-            return None
+        if r in job["description"].lower():
+            job["description"] = "PYTHON IN DESCRIPTION --- " + job["description"]
+            continue
+        elif r in job["title"].lower():
+            job["description"] = "PYTHON IN DESCRIPTION --- " + job["description"]
+            continue
+        else:
+            print(f'FILTERING - "{r}" not found in description nor title')
+            return job
 
     return job
