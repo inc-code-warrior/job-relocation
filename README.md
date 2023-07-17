@@ -1,5 +1,5 @@
 # job-relocation
-Gets location of Iglesia Ni Cristo locales in North America to help determine if jobs nearby can be considered.
+Personal project that scraped LinkedIn and church website for location data.  This data was later manually imported into Google Maps to look at distances between job openings and chapel locations.
 
 ## Setup
 1. Install chromedriver from
