@@ -1,5 +1,5 @@
 # job-relocation
-Personal project that scraped LinkedIn and church website for location data.  This data was later manually imported into Google Maps to look at distances between job openings and chapel locations.
+Personal project that scraped LinkedIn jobs and a church website to retrieve location data.  This data was later manually imported into Google Maps to look at distances between job openings and chapel locations.
 
 ## Setup
 1. Install chromedriver from
