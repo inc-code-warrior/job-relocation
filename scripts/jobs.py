@@ -4,12 +4,11 @@ import csv
 import linkedin as li
 import time
 
+start_url = "https://www.linkedin.com/jobs/search/?currentJobId=4215852391&f_E=4&f_TPR=r86400&f_WT=2&geoId=103644278&keywords=Python&origin=JOB_SEARCH_PAGE_JOB_FILTER&refresh=true&spellCorrectionEnabled=true"
 # todo: store path in shared file
-chromedriver_path = "/usr/local/bin/chromedriver_mac64/chromedriver"
+chromedriver_path = "/usr/local/bin/chromedriver-mac-x64/chromedriver"
 b = webdriver.Chrome(chromedriver_path)
-b.get(
-    "https://www.linkedin.com/jobs/search/?currentJobId=3424954364&distance=25&f_E=4&f_TPR=r604800&f_WT=1%2C3&geoId=103644278&keywords=sdet&sortBy=DD"
-)
+b.get(start_url)
 
 li.scroll_to_end(b)
 

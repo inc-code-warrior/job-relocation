@@ -5,7 +5,7 @@ Personal project that scraped LinkedIn jobs and a church website to retrieve loc
 1. Install chromedriver from
     https://chromedriver.chromium.org/downloads and move to folder in path
     ```
-    mv ~/Downloads/chromedriver_mac64 /usr/local/bin
+    mv ~/Downloads/chromedriver-mac-x64 /usr/local/bin
     ```
 
 1. Install miniconda https://docs.conda.io/en/latest/miniconda.html
@@ -23,3 +23,9 @@ Personal project that scraped LinkedIn jobs and a church website to retrieve loc
         conda env create -f environment.yml
         conda activate dev
         ```
+
+## Usage
+1. Run script
+    ```
+    python ./scripts/jobs.py
+    ```
